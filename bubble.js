@@ -1,7 +1,7 @@
 function bubbleSort(){
     let n = size;
     let c=0,z=0;
-    let delay = 100;
+    let delay = 500;
     for(let i = 0;i<n-1;i++){ //outer loop
         setTimeout(() =>{
             console.log(c);
@@ -23,11 +23,11 @@ function bubbleSort(){
                      if(j+1 == n-i-1) divs[j+1].style.backgroundColor = yellow;//so when the last time of j comes make it as yellow
                 },z += (delay/5));
             }
-            alert(c);
         },c += delay);
     }
     setTimeout(() =>{//for the last one to be green
         divs[0].style.backgroundColor = yellow;
         enable_buttons();
-    },size/2*delay*size/2-100);
+        document.getElementById('bubbleDetail').style.display = 'none';
+    },size/2*delay*size/2-delay*3);
 }

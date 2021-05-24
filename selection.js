@@ -1,7 +1,7 @@
 function selectionSort(){
     let n = size;
     let c=0,z=0;
-    let delay  = 100;//the more the number here is more its slower
+    let delay = 500;//the more the number here is more its slower
     for(let i = 0;i<n-1;i++){
         setTimeout(() =>{
             let min_ind  =  i;
@@ -22,10 +22,11 @@ function selectionSort(){
                 divs[min_ind].style.backgroundColor = blue;//making the min_ind as blue again
                 divs[i].style.backgroundColor = yellow;
             },z+=(delay/5));
-        },c+=1000);
+        },c+=delay);
     }
     setTimeout(() =>{//after the above loop is over make the last one as yellow and enable buttons
         divs[n-1].style.backgroundColor = yellow;//remaining last one make it as yellow
         enable_buttons();
-    },size*delay*(delay/10));
+        document.getElementById('selectionDetail').style.display = 'none';
+    },size*delay*1.5-delay*2);
 }

@@ -64,14 +64,17 @@ function enable_buttons()
 }
 
 document.getElementById('selection').addEventListener('click',() => {
+    document.getElementById('selectionDetail').style.display = 'block';
     disable_buttons();
     selectionSort();
 });
 document.getElementById('bubble').addEventListener('click',() => {
+    document.getElementById('bubbleDetail').style.display = 'block';
     disable_buttons();
     bubbleSort();
 });
 document.getElementById('quick').addEventListener('click',() => {
+    document.getElementById('quickDetail').style.display = 'block';
     disable_buttons();
     quickSort(0,size-1);
 });

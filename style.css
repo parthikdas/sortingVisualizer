@@ -102,12 +102,27 @@ button{
 #container{
     width: 62%;
     background-color: #28706f;
+    display: flex;
+    justify-content: center;
 }
 #array_container{
-    width: 98%;
+    width: 99%;
     height: 80%;
     margin-top: .5rem;
     margin-left: .3rem;
     display: flex;
     color: #fff;
+}
+#selectionDetail{
+    display: none;
+    text-align: center;
+}
+#bubbleDetail{
+    display: none;
+    text-align: center;
+}
+#quickDetail{
+    margin-left: -1rem;
+    display: none;
+    text-align: left;
 }
