@@ -1,0 +1,42 @@
+<!--
+    Work to do:
+    1.make use of the speed of algo input range button
+    2.make mergeSort/quick sort
+    3.write something about the algo in right div like the time complexity from gfg
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Sorting Vizualizer</h1>
+        <div id="algo">
+            <button id="selection">Selection Sort</button>
+            <button id="bubble">Bubble Sort</button>
+            <button id="quick">Quick Sort</button>
+            <button id="merge">Merge Sort</button>
+        </div>
+    </div>
+    <div class="main">
+        <div id="left">
+            <p>Size of the array:</p>
+            <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+            <p>Speed of the algorithm:</p>
+            <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+            <button id="a_generate">Generate New Array!</button>
+        </div>
+        <div id="container"><div id="array_container"></div></div>
+        <div id="right"></div>
+    </div>
+    <script src="script.js"></script>
+    <script src="selection.js"></script>
+    <script src="bubble.js"></script>
+    <script src="quick.js"></script>
+</body>
+</html>

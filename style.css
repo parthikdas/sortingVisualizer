@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root{
+    --yellow: #F8BC24;
+    --blue: #051821;
+    --lightGreen: #33A532;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+body{
+    min-height: 100vh;
+    position: relative;
+}
+body::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(255,255,255,0.4);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    animation: haze 3s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes haze{
+    from{
+        background-color: rgba(255,255,255,0.5);
+    }
+    to{background-color: rgba(255,255,255,0);z-index: -1;}
+}
+.navbar{
+    height: 20vh;
+    width: 100%;
+    background-color: #051821;
+    display: flex;
+    align-items: center;
+}
+h1{
+    color: var(--yellow);
+    letter-spacing: .1rem;
+    margin-left: .5rem;
+    position: absolute;
+    z-index: 2;
+    animation: logo 3s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes logo{
+    from{top:50%;left:30%;font-size: 4rem;}
+    to{top: 4rem;left: .5rem;}
+}
+#algo{
+    position: absolute;
+    right: 0;
+}
+button{
+    padding: .5rem .5rem;
+    border: none;
+    outline: none;
+    border-radius: .8rem;
+    margin: .5rem;
+    cursor: pointer;
+}
+#algo button{
+    font-size:1rem;
+    border: .1rem solid var(--yellow);
+    background-color: transparent;
+    color: var(--yellow);
+}
+#algo button:hover{
+    background-color: var(--yellow);
+    color: var(--blue);
+}
+.button_locked{/* when buttons are locked */
+    opacity: .5;
+}
+.main{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+}
+#left, #right{
+    height: 100%;
+    width: 19%;
+    background-color: #1A4645;
+    line-height: 2rem;
+    color: var(--yellow);
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+#a_generate{
+    font-size: .9rem;
+    background-color: var(--yellow);
+    color: #1A4645;
+}
+#a_generate:hover{
+    background-color: transparent;
+    color: var(--yellow);
+    box-shadow: 0 0 .15rem .15rem var(--yellow);
+}
+#container{
+    width: 62%;
+    background-color: #28706f;
+}
+#array_container{
+    width: 98%;
+    height: 80%;
+    margin-top: .5rem;
+    margin-left: .3rem;
+    display: flex;
+    color: #fff;
+}
