@@ -113,16 +113,8 @@ button{
     display: flex;
     color: #fff;
 }
-#selectionDetail{
+#selectionDetail, #bubbleDetail,
+#quickDetail, #mergeDetail{
     display: none;
     text-align: center;
-}
-#bubbleDetail{
-    display: none;
-    text-align: center;
-}
-#quickDetail{
-    margin-left: -1rem;
-    display: none;
-    text-align: left;
 }

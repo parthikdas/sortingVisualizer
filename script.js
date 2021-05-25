@@ -35,8 +35,7 @@ function update_array_size(){
     //console.log(size)
     generate_array();
 }
-function disable_buttons()
-{
+function disable_buttons() {
     for(let i=0;i<buttons.length;i++)
     {
         buttons[i].classList=[];
@@ -49,8 +48,7 @@ function disable_buttons()
     }
 }
 
-function enable_buttons()
-{
+function enable_buttons() {
     for(let i=0;i<buttons.length;i++)
     {
         buttons[i].classList=[];
@@ -62,6 +60,9 @@ function enable_buttons()
         inp_aspeed.disabled=false;
     }
 }
+
+var c=0,z=0;//used by all sorting functions
+var delay=500;//the more the number here is more its slower
 
 document.getElementById('selection').addEventListener('click',() => {
     document.getElementById('selectionDetail').style.display = 'block';
@@ -79,6 +80,7 @@ document.getElementById('quick').addEventListener('click',() => {
     quickSort(0,size-1);
 });
 document.getElementById('merge').addEventListener('click',() => {
+    document.getElementById('mergeDetail').style.display = 'block';
     disable_buttons();
    // mergeSort();
 });

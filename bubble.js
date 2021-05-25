@@ -1,7 +1,6 @@
 function bubbleSort(){
     let n = size;
-    let c=0,z=0;
-    let delay = 500;
+    c=0,z=0;
     for(let i = 0;i<n-1;i++){ //outer loop
         setTimeout(() =>{
             console.log(c);
@@ -29,5 +28,5 @@ function bubbleSort(){
         divs[0].style.backgroundColor = yellow;
         enable_buttons();
         document.getElementById('bubbleDetail').style.display = 'none';
-    },size/2*delay*size/2-delay*3);
+    },size/2*delay*size/2-delay*5);
 }
