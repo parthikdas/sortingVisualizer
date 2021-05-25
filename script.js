@@ -7,6 +7,8 @@ var inp_as=document.getElementById('a_size');
 var size=inp_as.value;
 var inp_generate=document.getElementById("a_generate");
 var inp_aspeed=document.getElementById("a_speed");
+var c=0,z=0;//used by all sorting functions
+var delay=inp_aspeed.value;//the more the number here is more its slower
 
 var buttons=document.querySelectorAll('button');
 var div_sizes=[];
@@ -15,6 +17,7 @@ var cont=document.getElementById('array_container');
 
 inp_generate.addEventListener("click",generate_array);
 inp_as.addEventListener("input",update_array_size);
+inp_aspeed.addEventListener("input",speed);
 window.onload=update_array_size();//when window is loaded/reloaded
 
 function generate_array(){
@@ -60,27 +63,42 @@ function enable_buttons() {
         inp_aspeed.disabled=false;
     }
 }
-
-var c=0,z=0;//used by all sorting functions
-var delay=500;//the more the number here is more its slower
+//speed stuff
+function speed(){
+    if(inp_aspeed.value == 1){
+        delay = 1600;
+    } else if(inp_aspeed.value == 2){
+        delay = 1200;
+    } else if(inp_aspeed.value == 3){
+        delay = 800;
+    } else if(inp_aspeed.value == 4){
+        delay = 400;
+    } else if(inp_aspeed.value == 5){
+        delay = 100;
+    }
+}
 
 document.getElementById('selection').addEventListener('click',() => {
     document.getElementById('selectionDetail').style.display = 'block';
+    speed();
     disable_buttons();
     selectionSort();
 });
 document.getElementById('bubble').addEventListener('click',() => {
     document.getElementById('bubbleDetail').style.display = 'block';
+    speed();
     disable_buttons();
     bubbleSort();
 });
 document.getElementById('quick').addEventListener('click',() => {
     document.getElementById('quickDetail').style.display = 'block';
+    speed();
     disable_buttons();
     quickSort(0,size-1);
 });
 document.getElementById('merge').addEventListener('click',() => {
     document.getElementById('mergeDetail').style.display = 'block';
+    speed();
     disable_buttons();
    // mergeSort();
 });

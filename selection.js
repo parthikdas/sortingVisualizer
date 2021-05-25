@@ -1,7 +1,6 @@
 function selectionSort(){
     let n = size;
     c=0,z=0;
-    delay*=3;
     for(let i = 0;i<n-1;i++){
         setTimeout(() =>{
             let min_ind  =  i;
