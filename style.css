@@ -90,7 +90,8 @@ button{
     color: #fff;
 }
 #selectionDetail, #bubbleDetail,
-#quickDetail, #mergeDetail{
+#quickDetail, #mergeDetail,
+#insertionDetail{
     display: none;
     text-align: center;
 }

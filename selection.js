@@ -27,5 +27,7 @@ function selectionSort(){
         divs[n-1].style.backgroundColor = yellow;//remaining last one make it as yellow
         enable_buttons();
         document.getElementById('selectionDetail').style.display = 'none';
+        selection.style.backgroundColor=blue;//make the button off
+        selection.style.color=yellow;
     },size*delay*2.5);
 }

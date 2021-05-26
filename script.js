@@ -10,6 +10,12 @@ var inp_aspeed=document.getElementById("a_speed");
 var c=0,z=0;//used by all sorting functions
 var delay=inp_aspeed.value;//the more the number here is more its slower
 
+var selection = document.getElementById('selection');//for the selection sort button
+var bubble = document.getElementById('bubble');//for the bubble sort button
+var insertion = document.getElementById('insertion');//for the insertion sort button
+var quick = document.getElementById('quick');//for the quick sort button
+var merge = document.getElementById('merge');//for the merge sort button
+
 var buttons=document.querySelectorAll('button');
 var div_sizes=[];
 var divs=[];
@@ -78,27 +84,43 @@ function speed(){
     }
 }
 
-document.getElementById('selection').addEventListener('click',() => {
-    document.getElementById('selectionDetail').style.display = 'block';
+selection.addEventListener('click',() => {
+    selection.style.backgroundColor=yellow;//make the button show that it is on
+    selection.style.color=blue;
+    document.getElementById('selectionDetail').style.display = 'block';//show the time section
     speed();
     disable_buttons();
     selectionSort();
 });
-document.getElementById('bubble').addEventListener('click',() => {
-    document.getElementById('bubbleDetail').style.display = 'block';
+bubble.addEventListener('click',() => {
+    bubble.style.backgroundColor=yellow;//make the button show that it is on
+    bubble.style.color=blue;
+    document.getElementById('bubbleDetail').style.display = 'block';//show the time section
     speed();
     disable_buttons();
     bubbleSort();
 });
-document.getElementById('quick').addEventListener('click',() => {
-    document.getElementById('quickDetail').style.display = 'block';
+insertion.addEventListener('click',() => {
+    insertion.style.backgroundColor=yellow;//make the button show that it is on
+    insertion.style.color=blue;
+    document.getElementById('insertionDetail').style.display = 'block';//show the time section
+    speed();
+    disable_buttons();
+    insertionSort();
+});
+quick.addEventListener('click',() => {
+    quick.style.backgroundColor=yellow;//make the button show that it is on
+    quick.style.color=blue;
+    document.getElementById('quickDetail').style.display = 'block';//show the time section
     speed();
     disable_buttons();
     quickSort(0,size-1);
 });
-document.getElementById('merge').addEventListener('click',() => {
-    document.getElementById('mergeDetail').style.display = 'block';
+merge.addEventListener('click',() => {
+    merge.style.backgroundColor=yellow;//make the button show that it is on
+    merge.style.color=blue;
+    document.getElementById('mergeDetail').style.display = 'block';//show the time section
     speed();
     disable_buttons();
-   // mergeSort();
+    mergeSort(div_sizes,0,size-1);
 });

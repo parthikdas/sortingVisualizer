@@ -38,21 +38,23 @@ function bubbleSort(){
         },c += delay);
     }
     
-}
-function release(){
-    var x;
-    if(size<=80) x=c-delay*2;
-    else if(size>80 && size<=134) x=c;
-    else { //size is >134
-        if(delay==100) x=c+delay*(g/2);//speed 5
-        else if(delay==400) x=c+delay*(g/0.5); //speed 4
-        else if(delay==800) x=c+delay*(g); //speed 3
-        else if(delay==1200) x=c+delay*(g*0.5); //speed 2
-        else x=c+delay*(g*2); //speed 1    
+    function release(){
+        var x;
+        if(size<=80) x=c-delay*2;
+        else if(size>80 && size<=134) x=c;
+        else { //size is >134
+            if(delay==100) x=c+delay*(g/2);//speed 5
+            else if(delay==400) x=c+delay*(g/0.5); //speed 4
+            else if(delay==800) x=c+delay*(g); //speed 3
+            else if(delay==1200) x=c+delay*(g*0.5); //speed 2
+            else x=c+delay*(g*2); //speed 1    
+        }
+        setTimeout(() =>{//for the last one to be green
+            divs[0].style.backgroundColor = yellow;
+            enable_buttons();
+            document.getElementById('bubbleDetail').style.display = 'none';
+            bubble.style.backgroundColor=blue;//make the button off
+            bubble.style.color=yellow;
+        },x);
     }
-    setTimeout(() =>{//for the last one to be green
-        divs[0].style.backgroundColor = yellow;
-        enable_buttons();
-        document.getElementById('bubbleDetail').style.display = 'none';
-    },x);
 }
