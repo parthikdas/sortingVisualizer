@@ -12,23 +12,7 @@
 }
 body{
     min-height: 100vh;
-    position: relative;
-}
-body::before{
-    content: "";
-    position: absolute;
-    background-color: rgba(255,255,255,0.4);
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    animation: haze 3s ease;
-    animation-fill-mode: forwards;
-}
-@keyframes haze{
-    from{
-        background-color: rgba(255,255,255,0.5);
-    }
-    to{background-color: rgba(255,255,255,0);z-index: -1;}
+    min-width: 100vw;
 }
 .navbar{
     height: 20vh;
@@ -42,13 +26,6 @@ h1{
     letter-spacing: .1rem;
     margin-left: .5rem;
     position: absolute;
-    z-index: 2;
-    animation: logo 3s ease;
-    animation-fill-mode: forwards;
-}
-@keyframes logo{
-    from{top:50%;left:30%;font-size: 4rem;}
-    to{top: 4rem;left: .5rem;}
 }
 #algo{
     position: absolute;

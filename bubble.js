@@ -1,7 +1,8 @@
+var g;
 function bubbleSort(){
     let n = size;
     c=0,z=0;
-    var g=10;
+    g=10;
     if(delay==1600){
         g=10;
     }else if(delay==1200){
@@ -11,7 +12,7 @@ function bubbleSort(){
     }else if(delay==400){
         g=75;
     }else if(delay==100){
-        g=100;
+        g=100;//80, make above 16 multiple
     }
     for(let i = 0;i<n-1;i++){ //outer loop
         setTimeout(() =>{
@@ -33,11 +34,25 @@ function bubbleSort(){
                      if(j+1 == n-i-1) divs[j+1].style.backgroundColor = yellow;//so when the last time of j comes make it as yellow
                 },z += (delay/(g/2)));
             }
+            if(i+1==n-1)  setTimeout(release,c+=delay);//for the last iteration
         },c += delay);
+    }
+    
+}
+function release(){
+    var x;
+    if(size<=80) x=c-delay*2;
+    else if(size>80 && size<=134) x=c;
+    else { //size is >134
+        if(delay==100) x=c+delay*(g/2);//speed 5
+        else if(delay==400) x=c+delay*(g/0.5); //speed 4
+        else if(delay==800) x=c+delay*(g); //speed 3
+        else if(delay==1200) x=c+delay*(g*0.5); //speed 2
+        else x=c+delay*(g*2); //speed 1    
     }
     setTimeout(() =>{//for the last one to be green
         divs[0].style.backgroundColor = yellow;
         enable_buttons();
         document.getElementById('bubbleDetail').style.display = 'none';
-    },size*size+g*(g/2));
+    },x);
 }
