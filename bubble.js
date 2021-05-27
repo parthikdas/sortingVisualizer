@@ -12,6 +12,7 @@ function bubbleSort(){
     }else if(delay==400){
         g=75;
     }else if(delay==100){
+        delay=20 // made it little faster 
         g=100;//80, make above 16 multiple
     }
     for(let i = 0;i<n-1;i++){ //outer loop

@@ -34,7 +34,7 @@ function partition (low,high)
             divs[high].style.height = div_sizes[high]+'%';
             //setTimeout(()=>{
             divs[i+1].style.backgroundColor='red';
-            divs[high].style.backgroundColor='red';
+            divs[high].style.backgroundColor=yellow;
             //},k+=delay/1.2);
         //setTimeout(()=>{
             for(var t=low;t<=i+1;t++)

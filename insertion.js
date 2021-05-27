@@ -1,7 +1,7 @@
 function insertionSort(){
     c=0;let g=0
     for(let i=0;i<size;i++){
-        //setTimeout(()=>{
+        setTimeout(()=>{
             divs[i].style.backgroundColor = lightGreen;//making the current as light green
             let current = div_sizes[i];
 
@@ -15,10 +15,10 @@ function insertionSort(){
                 divs[j].style.height = div_sizes[j]+'%';//height
                 divs[j+1].style.height = div_sizes[j+1]+'%';//update
                 
-                // divs[j].style.backgroundColor=blue;
+                divs[j].style.backgroundColor=blue;
                 // if(j==(i-1))
                 // {
-                //     divs[j].style.backgroundColor=yellow;//Color update
+                     divs[j].style.backgroundColor=yellow;//Color update
                 // }
                 // else
                 // {
@@ -29,12 +29,17 @@ function insertionSort(){
             // divs[i].style.backgroundColor = blue;
             div_sizes[j+1]=current;
             divs[j+1].style.height = div_sizes[j+1]+'%';
-            // divs[j+1].style.backgroundColor = yellow;
+            divs[j+1].style.backgroundColor = yellow;
             //for(let i=0;i<j;i++) divs[i].style.backgroundColor = yellow;
-        //},c+=500)
+        },c+=delay);
+        if(i+1==size) setTimeout(()=>{release()},c+=delay);
     }
-    enable_buttons();
-    document.getElementById('insertionDetail').style.display = 'none';
-    insertion.style.backgroundColor=blue;//make the button offˀ
-    insertion.style.color=yellow; 
+
+    function release(){
+        divs[size-1].style.backgroundColor = yellow;
+        enable_buttons();
+        document.getElementById('insertionDetail').style.display = 'none';
+        insertion.style.backgroundColor=blue;//make the button offˀ
+        insertion.style.color=yellow;
+    }
 }
