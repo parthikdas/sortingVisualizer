@@ -1,5 +1,6 @@
 function insertionSort(){
-    c=0;let g=0
+    c=0;let g=0;
+    if(delay==100) delay=80
     for(let i=0;i<size;i++){
         setTimeout(()=>{
             setTimeout(()=>{
@@ -24,7 +25,8 @@ function insertionSort(){
             },g+=delay/5)
             setTimeout(()=>{
                 for(let k=0;k<=i;k++) {
-                    setTimeout(()=>{divs[k].style.backgroundColor = yellow;//color update for the divs of the iteration
+                    setTimeout(()=>{//can remove it if you dont want multiple reds
+                        divs[k].style.backgroundColor = yellow;//color update for the divs of the iteration
                     },k*10);
                 }
             },g+=delay/2);

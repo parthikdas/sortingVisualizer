@@ -60,6 +60,9 @@ function quickSort(low,high){
         //setTimeout(()=>{
             divs[size-1].style.backgroundColor=yellow;
             enable_buttons();
+            document.getElementById('quickDetail').style.display = 'none';
+            quick.style.backgroundColor=blue;//make the button off
+            quick.style.color=yellow;
         //},1000);
     }
 }
