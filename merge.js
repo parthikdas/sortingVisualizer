@@ -1,62 +1,74 @@
-function mergeFun(arr, l, m, r)
-{
+function mergeFun(l, m, r){   
+    setTimeout(()=>{
         var n1 = m - l + 1;
         var n2 = r - m;
-     
         var L = new Array(n1);// Create temp arrays
         var R = new Array(n2);
-     
-        for (var i = 0; i < n1; i++)
-            L[i] = arr[l + i];
-        for (var j = 0; j < n2; j++)
-            R[j] = arr[m + 1 + j];
-      
-        var i = 0;// Initial index of first subarray
-        var j = 0;// Initial index of second subarray
-        var k = l;// Initial index of merged subarray
-     
+        for (var i = 0; i < n1; i++){
+            L[i] = div_sizes[l + i];
+            divs[l+i].style.backgroundColor=lightGreen
+        }
+        for (var j = 0; j < n2; j++){
+            R[j] = div_sizes[m + 1 + j];
+            divs[m+1+j].style.backgroundColor=lightGreen
+        }
+        var i=0, j=0;// Initial index of first, second subarray
+        var k=l;// Initial index of merged subarray
         while (i < n1 && j < n2) {
             if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                divs[k].style.height=arr[k]+'%';
-                i++;
+                div_sizes[k] = L[i++];
+                divs[k].style.height=div_sizes[k]+'%';
+                divs[k].style.backgroundColor=lightGreen
             }
             else {
-                arr[k] = R[j];
-                divs[k].style.height=arr[k]+'%';
-                j++;
+                div_sizes[k] = R[j++];
+                divs[k].style.height=div_sizes[k]+'%';
+                divs[k].style.backgroundColor=lightGreen
             }
+            k++;
+        }
+        while (i < n1) { //Copy the remaining elements of L[], if there are any
+            div_sizes[k] = L[i++];
+            divs[k].style.height=div_sizes[k]+'%';
+            divs[k].style.backgroundColor=lightGreen
             k++;
         }
     
-        while (i < n1) { //Copy the remaining elements of L[], if there are any
-            arr[k] = L[i];
-            divs[k].style.height=arr[k]+'%';
-            i++;
-            k++;
-        }
-     
         while (j < n2) { //Copy the remaining elements of R[], if there are any
-            arr[k] = R[j];
-            divs[k].style.height=arr[k]+'%';
-            j++;
+            div_sizes[k] = R[j++];
+            divs[k].style.height=div_sizes[k]+'%';
+            divs[k].style.backgroundColor=lightGreen
             k++;
         }
+        setTimeout(()=>{
+            for(let y=0;y<k;y++){
+                divs[y].style.backgroundColor=yellow
+            }
+        },delay/2)
+    },c+=delay/6) 
 }
 
-function mergeSort(div_sizes,l, r){
+function mergeSort(l, r){
     if(l>=r){
-        divs[size-1].style.backgroundColor=yellow;
-        enable_buttons();
-        document.getElementById('mergeDetail').style.display = 'none';
-        merge.style.backgroundColor=blue;//make the button off
-        merge.style.color=yellow;
+        setTimeout(()=>{
+            release();  
+        },c+=delay);
         return;//returns recursively
     }
     var m =l+ parseInt((r-l)/2);
-    divs[m].style.backgroundColor = yellow;
-    mergeSort(div_sizes,l,m);
-    mergeSort(div_sizes,m+1,r);
-    mergeFun(div_sizes,l,m,r);
+    setTimeout(()=>{
+        divs[m].style.backgroundColor = 'red';
+    },c+=delay/2);
+    mergeSort(l,m);
+    mergeSort(m+1,r);
+    mergeFun(l,m,r);
     
+    function release(){
+        setTimeout(()=>{
+            enable_buttons();
+            document.getElementById('mergeDetail').style.display = 'none';
+            merge.style.backgroundColor=blue;//make the button off
+            merge.style.color=yellow;
+        },c+=delay);
+    }
 }

@@ -9,7 +9,7 @@ function selectionSort(){
                 for(let j = i+1;j<n;j++){
                     if(div_sizes[j]<div_sizes[min_ind]) min_ind = j;
                 }
-                divs[min_ind].style.backgroundColor = lightGreen//make the founded min_ind as green
+                divs[min_ind].style.backgroundColor = 'red'//make the founded min_ind as green
              },z+=(delay/2));//can make it 4
              setTimeout(() =>{
                 let temp = div_sizes[min_ind];//swap work

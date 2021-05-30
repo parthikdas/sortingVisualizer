@@ -20,7 +20,7 @@ function bubbleSort(){
             for(let j = 0;j<n-i-1;j++){ //inner loop
                 setTimeout(() =>{
                     divs[j].style.backgroundColor = lightGreen;
-                    divs[j+1].style.backgroundColor = lightGreen;
+                    divs[j+1].style.backgroundColor = 'red';
                 },z += (delay/g));
                 setTimeout(() =>{
                     if(div_sizes[j]>div_sizes[j+1]){//swap work

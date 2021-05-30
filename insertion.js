@@ -27,7 +27,7 @@ function insertionSort(){
                 for(let k=0;k<=i;k++) {
                     setTimeout(()=>{//can remove it if you dont want multiple reds
                         divs[k].style.backgroundColor = yellow;//color update for the divs of the iteration
-                    },k*10);
+                    },k*5);
                 }
             },g+=delay/2);
         },c+=delay);
