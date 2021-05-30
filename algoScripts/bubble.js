@@ -1,5 +1,5 @@
-var g;
 function bubbleSort(){
+    var g;
     let n = size;
     c=0,z=0;
     g=10;
@@ -10,7 +10,7 @@ function bubbleSort(){
     }else if(delay==800){
         g=50;
     }else if(delay==400){
-        g=75;
+        g=65;
     }else if(delay==100){
         delay=20 // made it little faster 
         g=100;//80, make above 16 multiple

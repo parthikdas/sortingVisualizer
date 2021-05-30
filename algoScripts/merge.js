@@ -47,7 +47,6 @@ function mergeFun(l, m, r){
         },delay/2)
     },c+=delay/6) 
 }
-
 function mergeSort(l, r){
     if(l>=r){
         setTimeout(()=>{
@@ -71,4 +70,8 @@ function mergeSort(l, r){
             merge.style.color=yellow;
         },c+=delay);
     }
+}
+function mergeSortF(){
+    c=0;
+    mergeSort(0,size-1);
 }

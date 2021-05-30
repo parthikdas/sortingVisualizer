@@ -88,50 +88,50 @@ function blue_array(){//after 1 sorting algo if another clicked then make it blu
     for(let i=0;i<size;i++) divs[i].style.backgroundColor=blue;
 }
 selection.addEventListener('click',() => {
+    disable_buttons();
     blue_array();
     selection.style.backgroundColor=yellow;//make the button show that it is on
     selection.style.color=blue;
     document.getElementById('selectionDetail').style.display = 'block';//show the time section
     speed();
-    disable_buttons();
     selectionSort();
 });
 bubble.addEventListener('click',() => {
+    disable_buttons();
     blue_array();
     bubble.style.backgroundColor=yellow;//make the button show that it is on
     bubble.style.color=blue;
     document.getElementById('bubbleDetail').style.display = 'block';//show the time section
     speed();
-    disable_buttons();
     bubbleSort();
 });
 insertion.addEventListener('click',() => {
+    disable_buttons();
     blue_array();
     insertion.style.backgroundColor=yellow;//make the button show that it is on
     insertion.style.color=blue;
     document.getElementById('insertionDetail').style.display = 'block';//show the time section
     speed();
-    disable_buttons();
     insertionSort();
 });
 quick.addEventListener('click',() => {
+    disable_buttons();
     blue_array();
     quick.style.backgroundColor=yellow;//make the button show that it is on
     quick.style.color=blue;
     document.getElementById('quickDetail').style.display = 'block';//show the time section
     speed();
-    disable_buttons();
     quickSort(0,size-1);
 });
 merge.addEventListener('click',() => {
+    disable_buttons();
     blue_array();
     merge.style.backgroundColor=yellow;//make the button show that it is on
     merge.style.color=blue;
     document.getElementById('mergeDetail').style.display = 'block';//show the time section
     speed();
-    disable_buttons();
     if(delay==100 || delay==400) delay/=5;//make merge sort faster
     else if(delay==800 || delay==1200) delay/=3;
     else delay/=1.5;
-    mergeSort(0,size-1);
+    mergeSortF();
 });
