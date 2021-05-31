@@ -1,6 +1,7 @@
 function insertionSort(){
     c=0;let g=0;
     if(delay==100) delay=80
+    else if(delay==400) delay = 200
     for(let i=0;i<size;i++){
         setTimeout(()=>{
             setTimeout(()=>{

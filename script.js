@@ -121,7 +121,10 @@ quick.addEventListener('click',() => {
     quick.style.color=blue;
     document.getElementById('quickDetail').style.display = 'block';//show the time section
     speed();
-    quickSort(0,size-1);
+    if(delay==100) delay/=4;
+    else if(delay==400) delay/=3;
+    else delay/=2;
+    quickSortF();
 });
 merge.addEventListener('click',() => {
     disable_buttons();
